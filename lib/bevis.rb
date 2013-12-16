@@ -1,5 +1,7 @@
 require "bevis/version"
 
 module Bevis
-  # Your code goes here...
+  def compare file1,file2
+
+  end
 end

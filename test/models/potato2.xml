@@ -1,0 +1,1764 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created by JWS2SBML on 2008/05/26 09:12:13-->
+<sbml xmlns="http://www.sbml.org/sbml/level2" level="2" version="1">
+<model name="assmus">
+  <listOfCompartments>
+    <compartment id="compartment" name="compartment" size="1"/>
+  </listOfCompartments>
+  <listOfSpecies>
+    <species id="G1Pam" name="G1Pam" compartment="compartment" initialConcentration="30"/>
+    <species id="ATPam" name="ATPam" compartment="compartment" initialConcentration="150"/>
+    <species id="ADPGam" name="ADPGam" compartment="compartment" initialConcentration="100"/>
+    <species id="PPam" name="PPam" compartment="compartment" initialConcentration="5"/>
+    <species id="PGA3am" name="PGA3am" compartment="compartment" initialConcentration="160"/>
+    <species id="Pam" name="Pam" compartment="compartment" initialConcentration="2000"/>
+    <species id="xstarch" name="xstarch" compartment="compartment" initialConcentration="1000000" boundaryCondition="true" constant="true"/>
+    <species id="ADPam" name="ADPam" compartment="compartment" initialConcentration="100"/>
+    <species id="Glucoseam" name="Glucoseam" compartment="compartment" initialConcentration="3000"/>
+    <species id="Glucosecyt" name="Glucosecyt" compartment="compartment" initialConcentration="150"/>
+    <species id="G6Pam" name="G6Pam" compartment="compartment" initialConcentration="550"/>
+    <species id="Pcyt" name="Pcyt" compartment="compartment" initialConcentration="2000"/>
+    <species id="G6Pcyt" name="G6Pcyt" compartment="compartment" initialConcentration="500"/>
+    <species id="G1Pcyt" name="G1Pcyt" compartment="compartment" initialConcentration="30"/>
+    <species id="F6Pcyt" name="F6Pcyt" compartment="compartment" initialConcentration="160"/>
+    <species id="F16BPcyt" name="F16BPcyt" compartment="compartment" initialConcentration="1"/>
+    <species id="PEPcyt" name="PEPcyt" compartment="compartment" initialConcentration="10"/>
+    <species id="ATPcyt" name="ATPcyt" compartment="compartment" initialConcentration="200"/>
+    <species id="ADPcyt" name="ADPcyt" compartment="compartment" initialConcentration="180"/>
+    <species id="PPcyt" name="PPcyt" compartment="compartment" initialConcentration="1"/>
+    <species id="GAPcyt" name="GAPcyt" compartment="compartment" initialConcentration="1"/>
+    <species id="DHAPcyt" name="DHAPcyt" compartment="compartment" initialConcentration="5"/>
+    <species id="PGA3cyt" name="PGA3cyt" compartment="compartment" initialConcentration="150"/>
+    <species id="PGA2cyt" name="PGA2cyt" compartment="compartment" initialConcentration="20"/>
+    <species id="xpyruvate" name="xpyruvate" compartment="compartment" initialConcentration="10" boundaryCondition="true" constant="true"/>
+    <species id="UTPcyt" name="UTPcyt" compartment="compartment" initialConcentration="20"/>
+    <species id="UDPGcyt" name="UDPGcyt" compartment="compartment" initialConcentration="870"/>
+    <species id="Sucrose" name="Sucrose" compartment="compartment" initialConcentration="88000"/>
+    <species id="UDPcyt" name="UDPcyt" compartment="compartment" initialConcentration="10"/>
+    <species id="Fructose" name="Fructose" compartment="compartment" initialConcentration="20"/>
+    <species id="xsucrose" name="xsucrose" compartment="compartment" initialConcentration="90000" boundaryCondition="true" constant="true"/>
+  </listOfSpecies>
+  <listOfParameters>
+    <parameter id="VmaxAGPase" name="VmaxAGPase" value="312"/>
+    <parameter id="KmG1PAGPase" name="KmG1PAGPase" value="100"/>
+    <parameter id="KmATPAGPase" name="KmATPAGPase" value="180"/>
+    <parameter id="KmADPGAGPase" name="KmADPGAGPase" value="280"/>
+    <parameter id="KmPPAGPase" name="KmPPAGPase" value="260"/>
+    <parameter id="KiPAGPase" name="KiPAGPase" value="160"/>
+    <parameter id="KaPGA3AGPase" name="KaPGA3AGPase" value="10"/>
+    <parameter id="VmaxStSynth" name="VmaxStSynth" value="171"/>
+    <parameter id="KmADPGStSynth" name="KmADPGStSynth" value="150"/>
+    <parameter id="VmaxpPPase" name="VmaxpPPase" value="500"/>
+    <parameter id="KeqpPPase" name="KeqpPPase" value="750000"/>
+    <parameter id="VforwardStPase" name="VforwardStPase" value="200"/>
+    <parameter id="KmPStPase" name="KmPStPase" value="6200"/>
+    <parameter id="KmG1PStPase" name="KmG1PStPase" value="2600"/>
+    <parameter id="KeqStPase" name="KeqStPase" value="0.18"/>
+    <parameter id="Vmaxdegr" name="Vmaxdegr" value="114"/>
+    <parameter id="KiGlucosedegr" name="KiGlucosedegr" value="100"/>
+    <parameter id="VGexp" name="VGexp" value="1"/>
+    <parameter id="kforwardGexp" name="kforwardGexp" value="0.001"/>
+    <parameter id="kbackwardGexp" name="kbackwardGexp" value="0.001"/>
+    <parameter id="VG6Pexp" name="VG6Pexp" value="1"/>
+    <parameter id="kforwardG6Pexp" name="kforwardG6Pexp" value="0.01"/>
+    <parameter id="kbackwardG6Pexp" name="kbackwardG6Pexp" value="0.01"/>
+    <parameter id="VmaxpPGM" name="VmaxpPGM" value="1542"/>
+    <parameter id="KeqpPGM" name="KeqpPGM" value="17"/>
+    <parameter id="VmaxcPGM" name="VmaxcPGM" value="1842"/>
+    <parameter id="KeqcPGM" name="KeqcPGM" value="17"/>
+    <parameter id="VmaxPGI" name="VmaxPGI" value="1086"/>
+    <parameter id="KmG6PPGI" name="KmG6PPGI" value="270"/>
+    <parameter id="KmF6PPGI" name="KmF6PPGI" value="150"/>
+    <parameter id="KeqPGI" name="KeqPGI" value="0.25"/>
+    <parameter id="KiPEPPGI" name="KiPEPPGI" value="1100"/>
+    <parameter id="KiF16BPPGI" name="KiF16BPPGI" value="7500"/>
+    <parameter id="VmaxPFK" name="VmaxPFK" value="135"/>
+    <parameter id="KmF6PPFK" name="KmF6PPFK" value="290"/>
+    <parameter id="KiPEPPFK" name="KiPEPPFK" value="18"/>
+    <parameter id="nPFK" name="nPFK" value="2"/>
+    <parameter id="LPFK" name="LPFK" value="1"/>
+    <parameter id="VmaxPFP" name="VmaxPFP" value="1266"/>
+    <parameter id="KmF6PPFP" name="KmF6PPFP" value="500"/>
+    <parameter id="KmPPPFP" name="KmPPPFP" value="25"/>
+    <parameter id="KmF16BPPFP" name="KmF16BPPFP" value="10"/>
+    <parameter id="KmPPFP" name="KmPPFP" value="10"/>
+    <parameter id="KeqPFP" name="KeqPFP" value="3.3"/>
+    <parameter id="Vmaxald" name="Vmaxald" value="430"/>
+    <parameter id="Keqald" name="Keqald" value="81"/>
+    <parameter id="KmF16BPald" name="KmF16BPald" value="6"/>
+    <parameter id="KmGAPald" name="KmGAPald" value="100"/>
+    <parameter id="KmDHAPald" name="KmDHAPald" value="100"/>
+    <parameter id="KiGAPald" name="KiGAPald" value="1000"/>
+    <parameter id="VmaxTPI" name="VmaxTPI" value="4438"/>
+    <parameter id="KeqTPI" name="KeqTPI" value="0.0455"/>
+    <parameter id="KmGAPTPI" name="KmGAPTPI" value="440"/>
+    <parameter id="KmDHAPTPI" name="KmDHAPTPI" value="880"/>
+    <parameter id="VmaxGAPDH" name="VmaxGAPDH" value="301"/>
+    <parameter id="KeqGAPDH" name="KeqGAPDH" value="1.724"/>
+    <parameter id="VPGA3imp" name="VPGA3imp" value="1"/>
+    <parameter id="kforwardPGA3imp" name="kforwardPGA3imp" value="0.01"/>
+    <parameter id="kbackwardPGA3imp" name="kbackwardPGA3imp" value="0.01"/>
+    <parameter id="VmaxPGlyM" name="VmaxPGlyM" value="541"/>
+    <parameter id="KeqPGlyM" name="KeqPGlyM" value="0.16"/>
+    <parameter id="KmPGA3PGlyM" name="KmPGA3PGlyM" value="330"/>
+    <parameter id="KmPGA2PGlyM" name="KmPGA2PGlyM" value="60"/>
+    <parameter id="Vmaxeno" name="Vmaxeno" value="448"/>
+    <parameter id="Keqeno" name="Keqeno" value="6.3"/>
+    <parameter id="KmPGA2eno" name="KmPGA2eno" value="150"/>
+    <parameter id="KmPEPeno" name="KmPEPeno" value="150"/>
+    <parameter id="VmaxPK" name="VmaxPK" value="127"/>
+    <parameter id="KmPEPPK" name="KmPEPPK" value="20"/>
+    <parameter id="KmADPPK" name="KmADPPK" value="20"/>
+    <parameter id="KmpyruvatePK" name="KmpyruvatePK" value="1000"/>
+    <parameter id="KmATPPK" name="KmATPPK" value="86"/>
+    <parameter id="VforwardUGPase" name="VforwardUGPase" value="8100"/>
+    <parameter id="KmG1PUGPase" name="KmG1PUGPase" value="80"/>
+    <parameter id="KmUTPUGPase" name="KmUTPUGPase" value="120"/>
+    <parameter id="KmUDPGUGPase" name="KmUDPGUGPase" value="140"/>
+    <parameter id="KmPPUGPase" name="KmPPUGPase" value="130"/>
+    <parameter id="KeqUGPase" name="KeqUGPase" value="0.15"/>
+    <parameter id="VmaxSPS" name="VmaxSPS" value="1000"/>
+    <parameter id="KmF6PSPS" name="KmF6PSPS" value="5000"/>
+    <parameter id="KmUDPGSPS" name="KmUDPGSPS" value="3000"/>
+    <parameter id="KiUDPSPS" name="KiUDPSPS" value="1000"/>
+    <parameter id="KiPSPP" name="KiPSPP" value="4000"/>
+    <parameter id="VappSPSSPP" name="VappSPSSPP" value="797"/>
+    <parameter id="KmF6PSPSSPP" name="KmF6PSPSSPP" value="900"/>
+    <parameter id="KmUDPGSPSSPP" name="KmUDPGSPSSPP" value="2000"/>
+    <parameter id="KiSucroseSPSSPP" name="KiSucroseSPSSPP" value="5000"/>
+    <parameter id="KeqSPSSPP" name="KeqSPSSPP" value="7770"/>
+    <parameter id="VratioSPSSPP" name="VratioSPSSPP" value="1000"/>
+    <parameter id="VmaxSSynth" name="VmaxSSynth" value="100"/>
+    <parameter id="KeqSSynth" name="KeqSSynth" value="2.4"/>
+    <parameter id="KmSSynthFructose" name="KmSSynthFructose" value="5900"/>
+    <parameter id="KmSSynthUDPG" name="KmSSynthUDPG" value="1650"/>
+    <parameter id="KmSSynthSucrose" name="KmSSynthSucrose" value="55000"/>
+    <parameter id="KmSSynthUDP" name="KmSSynthUDP" value="140"/>
+    <parameter id="KiSSynthGlucose" name="KiSSynthGlucose" value="12000"/>
+    <parameter id="VSucUpt" name="VSucUpt" value="1"/>
+    <parameter id="kforwardSucUpt" name="kforwardSucUpt" value="0.01"/>
+    <parameter id="kbackwardSucUpt" name="kbackwardSucUpt" value="0.01"/>
+    <parameter id="Vmaxinv" name="Vmaxinv" value="33"/>
+    <parameter id="KmSucroseinv" name="KmSucroseinv" value="28000"/>
+    <parameter id="KiFructoseinv" name="KiFructoseinv" value="180"/>
+    <parameter id="KiGlucoseinv" name="KiGlucoseinv" value="1000"/>
+    <parameter id="VmaxFK" name="VmaxFK" value="376"/>
+    <parameter id="KmFructoseFK" name="KmFructoseFK" value="90"/>
+    <parameter id="KmATPFK" name="KmATPFK" value="35"/>
+    <parameter id="KiFructoseFK" name="KiFructoseFK" value="5000"/>
+    <parameter id="KmADPFK" name="KmADPFK" value="13"/>
+    <parameter id="KmF6PFK" name="KmF6PFK" value="1300"/>
+    <parameter id="KmGlucoseHK1" name="KmGlucoseHK1" value="41"/>
+    <parameter id="KmFructoseHK1" name="KmFructoseHK1" value="11000"/>
+    <parameter id="KmATPHK1" name="KmATPHK1" value="80"/>
+    <parameter id="KiADPHK1" name="KiADPHK1" value="20"/>
+    <parameter id="KiG6PHK1" name="KiG6PHK1" value="4100"/>
+    <parameter id="VmaxHK1" name="VmaxHK1" value="80"/>
+    <parameter id="VmaxHK2" name="VmaxHK2" value="80"/>
+    <parameter id="VmaxGK" name="VmaxGK" value="160"/>
+    <parameter id="KmGlucoseHK2" name="KmGlucoseHK2" value="130"/>
+    <parameter id="KmFructoseHK2" name="KmFructoseHK2" value="22000"/>
+    <parameter id="KmATPHK2" name="KmATPHK2" value="280"/>
+    <parameter id="KiADPHK2" name="KiADPHK2" value="100"/>
+    <parameter id="VNDPK" name="VNDPK" value="1"/>
+    <parameter id="kforwardNDPK" name="kforwardNDPK" value="0.001"/>
+    <parameter id="kbackwardNDPK" name="kbackwardNDPK" value="0.001"/>
+    <parameter id="VAT" name="VAT" value="1"/>
+    <parameter id="kforwardAT" name="kforwardAT" value="0.002"/>
+    <parameter id="kbackwardAT" name="kbackwardAT" value="0.002"/>
+    <parameter id="VPexp" name="VPexp" value="1"/>
+    <parameter id="kforwardPexp" name="kforwardPexp" value="0.3"/>
+    <parameter id="kbackwardPexp" name="kbackwardPexp" value="0.1"/>
+    <parameter id="VATPcons" name="VATPcons" value="1"/>
+    <parameter id="kATPcons" name="kATPcons" value="3"/>
+  </listOfParameters>
+  <listOfReactions>
+    <reaction id="vAGPase" name="vAGPase">
+      <listOfReactants>
+        <speciesReference species="G1Pam"/>
+        <speciesReference species="ATPam"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="ADPGam"/>
+        <speciesReference species="PPam"/>
+      </listOfProducts>
+      <listOfModifiers>
+        <modifierSpeciesReference species="PGA3am"/>
+        <modifierSpeciesReference species="Pam"/>
+      </listOfModifiers>
+      <kineticLaw>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <divide/>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> VmaxAGPase </ci>
+                <apply>
+                  <minus/>
+                  <apply>
+                    <times/>
+                    <ci> G1Pam </ci>
+                    <ci> ATPam </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> ADPGam </ci>
+                    <ci> PPam </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <cn type="integer"> 1 </cn>
+                  <apply>
+                    <divide/>
+                    <ci> PGA3am </ci>
+                    <ci> KaPGA3AGPase </ci>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <times/>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <times/>
+                    <ci> KmG1PAGPase </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <apply>
+                        <divide/>
+                        <ci> PPam </ci>
+                        <ci> KmPPAGPase </ci>
+                      </apply>
+                    </apply>
+                  </apply>
+                  <ci> G1Pam </ci>
+                </apply>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <times/>
+                    <ci> KmATPAGPase </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <apply>
+                        <divide/>
+                        <ci> ADPGam </ci>
+                        <ci> KmADPGAGPase </ci>
+                      </apply>
+                    </apply>
+                  </apply>
+                  <ci> ATPam </ci>
+                </apply>
+              </apply>
+            </apply>
+            <apply>
+              <plus/>
+              <cn type="integer"> 1 </cn>
+              <apply>
+                <divide/>
+                <ci> Pam </ci>
+                <ci> KiPAGPase </ci>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </kineticLaw>
+    </reaction>
+    <reaction id="vStSynth" name="vStSynth">
+      <listOfReactants>
+        <speciesReference species="ADPGam"/>
+        <speciesReference species="xstarch"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="ADPam"/>
+      </listOfProducts>
+      <kineticLaw>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> VmaxStSynth </ci>
+              <ci> ADPGam </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> KmADPGStSynth </ci>
+              <ci> ADPGam </ci>
+            </apply>
+          </apply>
+        </math>
+      </kineticLaw>
+    </reaction>
+    <reaction id="vpPPase" name="vpPPase">
+      <listOfReactants>
+        <speciesReference species="PPam"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="Pam" stoichiometry="2"/>
+      </listOfProducts>
+      <kineticLaw>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> VmaxpPPase </ci>
+            <apply>
+              <minus/>
+              <cn type="integer"> 1 </cn>
+              <apply>
+                <divide/>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <ci> Pam </ci>
+                    <ci> Pam </ci>
+                  </apply>
+                  <ci> PPam </ci>
+                </apply>
+                <ci> KeqpPPase </ci>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </kineticLaw>
+    </reaction>
+    <reaction id="vStPase" name="vStPase">
+      <listOfReactants>
+        <speciesReference species="xstarch"/>
+        <speciesReference species="Pam"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="G1Pam"/>
+      </listOfProducts>
+      <kineticLaw>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> VforwardStPase </ci>
+              <apply>
+                <minus/>
+                <ci> Pam </ci>
+                <apply>
+                  <divide/>
+                  <ci> G1Pam </ci>
+                  <ci> KeqStPase </ci>
+                </apply>
+              </apply>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> KmPStPase </ci>
+              <ci> Pam </ci>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> G1Pam </ci>
+                  <ci> KmPStPase </ci>
+                </apply>
+                <ci> KmG1PStPase </ci>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </kineticLaw>
+    </reaction>
+    <reaction id="vdegr" name="vdegr">
+      <listOfReactants>
+        <speciesReference species="xstarch"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="Glucoseam"/>
+      </listOfProducts>
+      <kineticLaw>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <divide/>
+            <ci> Vmaxdegr </ci>
+            <apply>
+              <plus/>
+              <cn type="integer"> 1 </cn>
+              <apply>
+                <divide/>
+                <ci> Glucoseam </ci>
+                <ci> KiGlucosedegr </ci>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </kineticLaw>
+    </reaction>
+    <reaction id="vGexp" name="vGexp">
+      <listOfReactants>
+        <speciesReference species="Glucoseam"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="Glucosecyt"/>
+      </listOfProducts>
+      <kineticLaw>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> VGexp </ci>
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> kforwardGexp </ci>
+                <ci> Glucoseam </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> kbackwardGexp </ci>
+                <ci> Glucosecyt </ci>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </kineticLaw>
+    </reaction>
+    <reaction id="vG6Pexp" name="vG6Pexp">
+      <listOfReactants>
+        <speciesReference species="G6Pam"/>
+        <speciesReference species="Pcyt"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="G6Pcyt"/>
+        <speciesReference species="Pam"/>
+      </listOfProducts>
+      <kineticLaw>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> VG6Pexp </ci>
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> kforwardG6Pexp </ci>
+                <ci> G6Pam </ci>
+                <ci> Pcyt </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> kbackwardG6Pexp </ci>
+                <ci> G6Pcyt </ci>
+                <ci> Pam </ci>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </kineticLaw>
+    </reaction>
+    <reaction id="vpPGM" name="vpPGM">
+      <listOfReactants>
+        <speciesReference species="G1Pam"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="G6Pam"/>
+      </listOfProducts>
+      <kineticLaw>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> VmaxpPGM </ci>
+            <apply>
+              <minus/>
+              <cn type="integer"> 1 </cn>
+              <apply>
+                <divide/>
+                <apply>
+                  <divide/>
+                  <ci> G6Pam </ci>
+                  <ci> G1Pam </ci>
+                </apply>
+                <ci> KeqpPGM </ci>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </kineticLaw>
+    </reaction>
+    <reaction id="vcPGM" name="vcPGM">
+      <listOfReactants>
+        <speciesReference species="G1Pcyt"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="G6Pcyt"/>
+      </listOfProducts>
+      <kineticLaw>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> VmaxcPGM </ci>
+            <apply>
+              <minus/>
+              <cn type="integer"> 1 </cn>
+              <apply>
+                <divide/>
+                <apply>
+                  <divide/>
+                  <ci> G6Pcyt </ci>
+                  <ci> G1Pcyt </ci>
+                </apply>
+                <ci> KeqcPGM </ci>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </kineticLaw>
+    </reaction>
+    <reaction id="vPGI" name="vPGI">
+      <listOfReactants>
+        <speciesReference species="G6Pcyt"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="F6Pcyt"/>
+      </listOfProducts>
+      <listOfModifiers>
+        <modifierSpeciesReference species="F16BPcyt"/>
+        <modifierSpeciesReference species="PEPcyt"/>
+      </listOfModifiers>
+      <kineticLaw>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> VmaxPGI </ci>
+              <apply>
+                <minus/>
+                <ci> G6Pcyt </ci>
+                <apply>
+                  <divide/>
+                  <ci> F6Pcyt </ci>
+                  <ci> KeqPGI </ci>
+                </apply>
+              </apply>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> KmG6PPGI </ci>
+              <ci> G6Pcyt </ci>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> F6Pcyt </ci>
+                  <ci> KmG6PPGI </ci>
+                </apply>
+                <ci> KmF6PPGI </ci>
+              </apply>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> F16BPcyt </ci>
+                  <ci> KmG6PPGI </ci>
+                </apply>
+                <ci> KiF16BPPGI </ci>
+              </apply>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> PEPcyt </ci>
+                  <ci> KmG6PPGI </ci>
+                </apply>
+                <ci> KiPEPPGI </ci>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </kineticLaw>
+    </reaction>
+    <reaction id="vPFK" name="vPFK">
+      <listOfReactants>
+        <speciesReference species="F6Pcyt"/>
+        <speciesReference species="ATPcyt"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="F16BPcyt"/>
+        <speciesReference species="ADPcyt"/>
+      </listOfProducts>
+      <listOfModifiers>
+        <modifierSpeciesReference species="PEPcyt"/>
+      </listOfModifiers>
+      <kineticLaw>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> VmaxPFK </ci>
+              <apply>
+                <divide/>
+                <ci> F6Pcyt </ci>
+                <ci> KmF6PPFK </ci>
+              </apply>
+              <apply>
+                <power/>
+                <apply>
+                  <plus/>
+                  <cn type="integer"> 1 </cn>
+                  <apply>
+                    <divide/>
+                    <ci> F6Pcyt </ci>
+                    <ci> KmF6PPFK </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <minus/>
+                  <ci> nPFK </ci>
+                  <cn type="integer"> 1 </cn>
+                </apply>
+              </apply>
+            </apply>
+            <apply>
+              <plus/>
+              <apply>
+                <power/>
+                <apply>
+                  <plus/>
+                  <cn type="integer"> 1 </cn>
+                  <apply>
+                    <divide/>
+                    <ci> F6Pcyt </ci>
+                    <ci> KmF6PPFK </ci>
+                  </apply>
+                </apply>
+                <ci> nPFK </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> LPFK </ci>
+                <apply>
+                  <power/>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> PEPcyt </ci>
+                      <ci> KiPEPPFK </ci>
+                    </apply>
+                  </apply>
+                  <ci> nPFK </ci>
+                </apply>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </kineticLaw>
+    </reaction>
+    <reaction id="vPFP" name="vPFP">
+      <listOfReactants>
+        <speciesReference species="F6Pcyt"/>
+        <speciesReference species="PPcyt"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="F16BPcyt"/>
+        <speciesReference species="Pcyt"/>
+      </listOfProducts>
+      <kineticLaw>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> VmaxPFP </ci>
+              <apply>
+                <divide/>
+                <apply>
+                  <divide/>
+                  <cn type="integer"> 1 </cn>
+                  <ci> KmF6PPFP </ci>
+                </apply>
+                <ci> KmPPPFP </ci>
+              </apply>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> F6Pcyt </ci>
+                  <ci> PPcyt </ci>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <ci> F16BPcyt </ci>
+                    <ci> Pcyt </ci>
+                  </apply>
+                  <ci> KeqPFP </ci>
+                </apply>
+              </apply>
+            </apply>
+            <apply>
+              <plus/>
+              <cn type="integer"> 1 </cn>
+              <apply>
+                <divide/>
+                <ci> F6Pcyt </ci>
+                <ci> KmF6PPFP </ci>
+              </apply>
+              <apply>
+                <divide/>
+                <ci> PPcyt </ci>
+                <ci> KmPPPFP </ci>
+              </apply>
+              <apply>
+                <divide/>
+                <ci> F16BPcyt </ci>
+                <ci> KmF16BPPFP </ci>
+              </apply>
+              <apply>
+                <divide/>
+                <ci> Pcyt </ci>
+                <ci> KmPPFP </ci>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </kineticLaw>
+    </reaction>
+    <reaction id="vald" name="vald">
+      <listOfReactants>
+        <speciesReference species="F16BPcyt"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="GAPcyt"/>
+        <speciesReference species="DHAPcyt"/>
+      </listOfProducts>
+      <kineticLaw>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> Vmaxald </ci>
+              <apply>
+                <divide/>
+                <ci> F16BPcyt </ci>
+                <ci> KmF16BPald </ci>
+              </apply>
+              <apply>
+                <minus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <times/>
+                      <ci> GAPcyt </ci>
+                      <ci> DHAPcyt </ci>
+                    </apply>
+                    <ci> F16BPcyt </ci>
+                  </apply>
+                  <ci> Keqald </ci>
+                </apply>
+              </apply>
+            </apply>
+            <apply>
+              <plus/>
+              <cn type="integer"> 1 </cn>
+              <apply>
+                <divide/>
+                <ci> F16BPcyt </ci>
+                <ci> KmF16BPald </ci>
+              </apply>
+              <apply>
+                <divide/>
+                <ci> GAPcyt </ci>
+                <ci> KmGAPald </ci>
+              </apply>
+              <apply>
+                <divide/>
+                <ci> DHAPcyt </ci>
+                <ci> KmDHAPald </ci>
+              </apply>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> F16BPcyt </ci>
+                  <ci> GAPcyt </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> KmF16BPald </ci>
+                  <ci> KiGAPald </ci>
+                </apply>
+              </apply>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> GAPcyt </ci>
+                  <ci> DHAPcyt </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> KmGAPald </ci>
+                  <ci> KmDHAPald </ci>
+                </apply>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </kineticLaw>
+    </reaction>
+    <reaction id="vTPI" name="vTPI">
+      <listOfReactants>
+        <speciesReference species="DHAPcyt"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="GAPcyt"/>
+      </listOfProducts>
+      <kineticLaw>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> VmaxTPI </ci>
+              <apply>
+                <minus/>
+                <ci> DHAPcyt </ci>
+                <apply>
+                  <divide/>
+                  <ci> GAPcyt </ci>
+                  <ci> KeqTPI </ci>
+                </apply>
+              </apply>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> KmDHAPTPI </ci>
+              <ci> DHAPcyt </ci>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> GAPcyt </ci>
+                  <ci> KmGAPTPI </ci>
+                </apply>
+                <ci> KmGAPTPI </ci>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </kineticLaw>
+    </reaction>
+    <reaction id="vGAPDH" name="vGAPDH">
+      <listOfReactants>
+        <speciesReference species="GAPcyt" stoichiometry="6"/>
+        <speciesReference species="ADPcyt" stoichiometry="17"/>
+        <speciesReference species="Pcyt" stoichiometry="17"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="PGA3cyt" stoichiometry="6"/>
+        <speciesReference species="ATPcyt" stoichiometry="17"/>
+      </listOfProducts>
+      <kineticLaw>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <apply>
+              <divide/>
+              <ci> VmaxGAPDH </ci>
+              <cn type="integer"> 6 </cn>
+            </apply>
+            <apply>
+              <minus/>
+              <cn type="integer"> 1 </cn>
+              <apply>
+                <divide/>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <ci> PGA3cyt </ci>
+                    <ci> ATPcyt </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> GAPcyt </ci>
+                    <ci> Pcyt </ci>
+                    <ci> ADPcyt </ci>
+                  </apply>
+                </apply>
+                <ci> KeqGAPDH </ci>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </kineticLaw>
+    </reaction>
+    <reaction id="vPGA3imp" name="vPGA3imp">
+      <listOfReactants>
+        <speciesReference species="PGA3cyt"/>
+        <speciesReference species="G6Pam"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="PGA3am"/>
+        <speciesReference species="G6Pcyt"/>
+      </listOfProducts>
+      <kineticLaw>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> VPGA3imp </ci>
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> kforwardPGA3imp </ci>
+                <ci> PGA3cyt </ci>
+                <ci> G6Pam </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> kbackwardPGA3imp </ci>
+                <ci> PGA3am </ci>
+                <ci> G6Pcyt </ci>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </kineticLaw>
+    </reaction>
+    <reaction id="vPGlyM" name="vPGlyM">
+      <listOfReactants>
+        <speciesReference species="PGA3cyt"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="PGA2cyt"/>
+      </listOfProducts>
+      <kineticLaw>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> VmaxPGlyM </ci>
+              <apply>
+                <minus/>
+                <ci> PGA3cyt </ci>
+                <apply>
+                  <divide/>
+                  <ci> PGA2cyt </ci>
+                  <ci> KeqPGlyM </ci>
+                </apply>
+              </apply>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> KmPGA3PGlyM </ci>
+              <ci> PGA3cyt </ci>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> PGA2cyt </ci>
+                  <ci> KmPGA3PGlyM </ci>
+                </apply>
+                <ci> KmPGA2PGlyM </ci>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </kineticLaw>
+    </reaction>
+    <reaction id="veno" name="veno">
+      <listOfReactants>
+        <speciesReference species="PGA2cyt"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="PEPcyt"/>
+      </listOfProducts>
+      <kineticLaw>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> Vmaxeno </ci>
+              <apply>
+                <minus/>
+                <ci> PGA2cyt </ci>
+                <apply>
+                  <divide/>
+                  <ci> PEPcyt </ci>
+                  <ci> Keqeno </ci>
+                </apply>
+              </apply>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> KmPGA2eno </ci>
+              <ci> PGA2cyt </ci>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> PEPcyt </ci>
+                  <ci> KmPGA2eno </ci>
+                </apply>
+                <ci> KmPEPeno </ci>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </kineticLaw>
+    </reaction>
+    <reaction id="vPK" name="vPK">
+      <listOfReactants>
+        <speciesReference species="PEPcyt"/>
+        <speciesReference species="ADPcyt"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="xpyruvate"/>
+        <speciesReference species="ATPcyt"/>
+      </listOfProducts>
+      <kineticLaw>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <divide/>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> VmaxPK </ci>
+                <ci> PEPcyt </ci>
+                <ci> ADPcyt </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> KmPEPPK </ci>
+                <ci> KmADPPK </ci>
+              </apply>
+            </apply>
+            <apply>
+              <plus/>
+              <cn type="integer"> 1 </cn>
+              <apply>
+                <divide/>
+                <ci> PEPcyt </ci>
+                <ci> KmPEPPK </ci>
+              </apply>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> PEPcyt </ci>
+                  <ci> ADPcyt </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> KmPEPPK </ci>
+                  <ci> KmADPPK </ci>
+                </apply>
+              </apply>
+              <apply>
+                <divide/>
+                <ci> ATPcyt </ci>
+                <ci> KmATPPK </ci>
+              </apply>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> xpyruvate </ci>
+                  <ci> ATPcyt </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> KmpyruvatePK </ci>
+                  <ci> KmATPPK </ci>
+                </apply>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </kineticLaw>
+    </reaction>
+    <reaction id="vUGPase" name="vUGPase">
+      <listOfReactants>
+        <speciesReference species="G1Pcyt"/>
+        <speciesReference species="UTPcyt"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="UDPGcyt"/>
+        <speciesReference species="PPcyt"/>
+      </listOfProducts>
+      <kineticLaw>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> VforwardUGPase </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> G1Pcyt </ci>
+                  <ci> UTPcyt </ci>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <ci> UDPGcyt </ci>
+                    <ci> PPcyt </ci>
+                  </apply>
+                  <ci> KeqUGPase </ci>
+                </apply>
+              </apply>
+            </apply>
+            <apply>
+              <times/>
+              <apply>
+                <plus/>
+                <apply>
+                  <times/>
+                  <ci> KmG1PUGPase </ci>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> PPcyt </ci>
+                      <ci> KmPPUGPase </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <ci> G1Pcyt </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <apply>
+                  <times/>
+                  <ci> KmUTPUGPase </ci>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> UDPGcyt </ci>
+                      <ci> KmUDPGUGPase </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <ci> UTPcyt </ci>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </kineticLaw>
+    </reaction>
+    <reaction id="vSPSSPP" name="vSPSSPP">
+      <listOfReactants>
+        <speciesReference species="F6Pcyt"/>
+        <speciesReference species="UDPGcyt"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="Sucrose"/>
+        <speciesReference species="Pcyt"/>
+        <speciesReference species="UDPcyt"/>
+      </listOfProducts>
+      <kineticLaw>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> VappSPSSPP </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> F6Pcyt </ci>
+                  <ci> UDPGcyt </ci>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <ci> UDPcyt </ci>
+                    <ci> Pcyt </ci>
+                  </apply>
+                  <ci> KeqSPSSPP </ci>
+                </apply>
+              </apply>
+            </apply>
+            <apply>
+              <plus/>
+              <apply>
+                <times/>
+                <ci> KmF6PSPSSPP </ci>
+                <ci> KmUDPGSPSSPP </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> F6Pcyt </ci>
+                <ci> UDPGcyt </ci>
+              </apply>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> UDPcyt </ci>
+                  <ci> Pcyt </ci>
+                  <ci> VratioSPSSPP </ci>
+                </apply>
+                <ci> KeqSPSSPP </ci>
+              </apply>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> Sucrose </ci>
+                  <ci> KmF6PSPSSPP </ci>
+                  <ci> KmUDPGSPSSPP </ci>
+                </apply>
+                <ci> KiSucroseSPSSPP </ci>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </kineticLaw>
+    </reaction>
+    <reaction id="vSSynth" name="vSSynth">
+      <listOfReactants>
+        <speciesReference species="Fructose"/>
+        <speciesReference species="UDPGcyt"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="Sucrose"/>
+        <speciesReference species="UDPcyt"/>
+      </listOfProducts>
+      <listOfModifiers>
+        <modifierSpeciesReference species="Glucosecyt"/>
+      </listOfModifiers>
+      <kineticLaw>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <divide/>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> VmaxSSynth </ci>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <ci> Fructose </ci>
+                    <ci> UDPGcyt </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> KmSSynthFructose </ci>
+                    <ci> KmSSynthUDPG </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <minus/>
+                  <cn type="integer"> 1 </cn>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <divide/>
+                      <apply>
+                        <divide/>
+                        <apply>
+                          <times/>
+                          <ci> Sucrose </ci>
+                          <ci> UDPcyt </ci>
+                        </apply>
+                        <ci> Fructose </ci>
+                      </apply>
+                      <ci> UDPGcyt </ci>
+                    </apply>
+                    <ci> KeqSSynth </ci>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <ci> Fructose </ci>
+                    <ci> UDPGcyt </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> KmSSynthFructose </ci>
+                    <ci> KmSSynthUDPG </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <ci> Sucrose </ci>
+                    <ci> UDPcyt </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> KmSSynthSucrose </ci>
+                    <ci> KmSSynthUDP </ci>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+            <apply>
+              <plus/>
+              <cn type="integer"> 1 </cn>
+              <apply>
+                <divide/>
+                <ci> Glucosecyt </ci>
+                <ci> KiSSynthGlucose </ci>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </kineticLaw>
+    </reaction>
+    <reaction id="vSucUpt" name="vSucUpt">
+      <listOfReactants>
+        <speciesReference species="xsucrose"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="Sucrose"/>
+      </listOfProducts>
+      <kineticLaw>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> VSucUpt </ci>
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> kforwardSucUpt </ci>
+                <ci> xsucrose </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> kbackwardSucUpt </ci>
+                <ci> Sucrose </ci>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </kineticLaw>
+    </reaction>
+    <reaction id="vinv" name="vinv">
+      <listOfReactants>
+        <speciesReference species="Sucrose"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="Fructose"/>
+        <speciesReference species="Glucosecyt"/>
+      </listOfProducts>
+      <kineticLaw>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> Vmaxinv </ci>
+              <apply>
+                <divide/>
+                <ci> Sucrose </ci>
+                <ci> KmSucroseinv </ci>
+              </apply>
+            </apply>
+            <apply>
+              <times/>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <divide/>
+                  <ci> Sucrose </ci>
+                  <ci> KmSucroseinv </ci>
+                </apply>
+                <apply>
+                  <divide/>
+                  <ci> Fructose </ci>
+                  <ci> KiFructoseinv </ci>
+                </apply>
+              </apply>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <divide/>
+                  <ci> Glucosecyt </ci>
+                  <ci> KiGlucoseinv </ci>
+                </apply>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </kineticLaw>
+    </reaction>
+    <reaction id="vFK" name="vFK">
+      <listOfReactants>
+        <speciesReference species="Fructose"/>
+        <speciesReference species="ATPcyt"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="F6Pcyt"/>
+        <speciesReference species="ADPcyt"/>
+      </listOfProducts>
+      <kineticLaw>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> VmaxFK </ci>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> Fructose </ci>
+                  <ci> ATPcyt </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> KmFructoseFK </ci>
+                  <ci> KmATPFK </ci>
+                </apply>
+              </apply>
+            </apply>
+            <apply>
+              <times/>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <divide/>
+                  <ci> Fructose </ci>
+                  <ci> KmFructoseFK </ci>
+                </apply>
+              </apply>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <divide/>
+                  <ci> Fructose </ci>
+                  <ci> KiFructoseFK </ci>
+                </apply>
+              </apply>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <divide/>
+                  <ci> F6Pcyt </ci>
+                  <ci> KmF6PFK </ci>
+                </apply>
+              </apply>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <divide/>
+                  <ci> ATPcyt </ci>
+                  <ci> KmATPFK </ci>
+                </apply>
+                <apply>
+                  <divide/>
+                  <ci> Fructose </ci>
+                  <ci> KiFructoseFK </ci>
+                </apply>
+                <apply>
+                  <divide/>
+                  <ci> ADPcyt </ci>
+                  <ci> KmADPFK </ci>
+                </apply>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </kineticLaw>
+    </reaction>
+    <reaction id="vHK" name="vHK">
+      <listOfReactants>
+        <speciesReference species="Glucosecyt"/>
+        <speciesReference species="ATPcyt"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="G6Pcyt"/>
+        <speciesReference species="ADPcyt"/>
+      </listOfProducts>
+      <listOfModifiers>
+        <modifierSpeciesReference species="Fructose"/>
+        <modifierSpeciesReference species="Fructose"/>
+      </listOfModifiers>
+      <kineticLaw>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <plus/>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <apply>
+                  <divide/>
+                  <ci> VmaxGK </ci>
+                  <cn type="integer"> 2 </cn>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <ci> Glucosecyt </ci>
+                    <ci> ATPcyt </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> KmGlucoseHK1 </ci>
+                    <ci> KmATPHK1 </ci>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <times/>
+                <apply>
+                  <plus/>
+                  <cn type="integer"> 1 </cn>
+                  <apply>
+                    <divide/>
+                    <ci> Glucosecyt </ci>
+                    <ci> KmGlucoseHK1 </ci>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> Fructose </ci>
+                    <ci> KmFructoseHK1 </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <cn type="integer"> 1 </cn>
+                  <apply>
+                    <divide/>
+                    <ci> ATPcyt </ci>
+                    <ci> KmATPHK1 </ci>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> ADPcyt </ci>
+                    <ci> KiADPHK1 </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <cn type="integer"> 1 </cn>
+                  <apply>
+                    <divide/>
+                    <ci> G6Pcyt </ci>
+                    <ci> KiG6PHK1 </ci>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <apply>
+                  <divide/>
+                  <ci> VmaxGK </ci>
+                  <cn type="integer"> 2 </cn>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <ci> Glucosecyt </ci>
+                    <ci> ATPcyt </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> KmGlucoseHK2 </ci>
+                    <ci> KmATPHK2 </ci>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <times/>
+                <apply>
+                  <plus/>
+                  <cn type="integer"> 1 </cn>
+                  <apply>
+                    <divide/>
+                    <ci> Glucosecyt </ci>
+                    <ci> KmGlucoseHK2 </ci>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> Fructose </ci>
+                    <ci> KmFructoseHK2 </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <cn type="integer"> 1 </cn>
+                  <apply>
+                    <divide/>
+                    <ci> ATPcyt </ci>
+                    <ci> KmATPHK2 </ci>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> ADPcyt </ci>
+                    <ci> KiADPHK2 </ci>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </kineticLaw>
+    </reaction>
+    <reaction id="vNDPK" name="vNDPK">
+      <listOfReactants>
+        <speciesReference species="ATPcyt"/>
+        <speciesReference species="UDPcyt"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="ADPcyt"/>
+        <speciesReference species="UTPcyt"/>
+      </listOfProducts>
+      <kineticLaw>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> VNDPK </ci>
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> kforwardNDPK </ci>
+                <ci> ATPcyt </ci>
+                <ci> UDPcyt </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> kbackwardNDPK </ci>
+                <ci> ADPcyt </ci>
+                <ci> UTPcyt </ci>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </kineticLaw>
+    </reaction>
+    <reaction id="vAT" name="vAT">
+      <listOfReactants>
+        <speciesReference species="ADPam"/>
+        <speciesReference species="ATPcyt"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="ATPam"/>
+        <speciesReference species="ADPcyt"/>
+      </listOfProducts>
+      <kineticLaw>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> VAT </ci>
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> kforwardAT </ci>
+                <ci> ATPcyt </ci>
+                <ci> ADPam </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> kbackwardAT </ci>
+                <ci> ATPam </ci>
+                <ci> ADPcyt </ci>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </kineticLaw>
+    </reaction>
+    <reaction id="vPexp" name="vPexp">
+      <listOfReactants>
+        <speciesReference species="Pam"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="Pcyt"/>
+      </listOfProducts>
+      <kineticLaw>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> VPexp </ci>
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> kforwardPexp </ci>
+                <ci> Pam </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> kbackwardPexp </ci>
+                <ci> Pcyt </ci>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </kineticLaw>
+    </reaction>
+    <reaction id="vATPcons" name="vATPcons">
+      <listOfReactants>
+        <speciesReference species="ATPcyt"/>
+      </listOfReactants>
+      <listOfProducts>
+        <speciesReference species="ADPcyt"/>
+        <speciesReference species="Pcyt"/>
+      </listOfProducts>
+      <kineticLaw>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> VATPcons </ci>
+            <ci> kATPcons </ci>
+            <apply>
+              <divide/>
+              <ci> ATPcyt </ci>
+              <ci> ADPcyt </ci>
+            </apply>
+          </apply>
+        </math>
+      </kineticLaw>
+    </reaction>
+  </listOfReactions>
+</model></sbml>

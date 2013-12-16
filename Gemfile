@@ -4,3 +4,4 @@ source 'https://rubygems.org'
 gemspec
 
 gem "open4","1.3.0"
+gem "minitest"
