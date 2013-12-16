@@ -1,8 +1,9 @@
 require 'minitest/unit'
 require "minitest/autorun"
+require_relative '../lib/bives'
 
 class BivesTest < MiniTest::Unit::TestCase
-  #include Bives
+  include Bives
 
   def setup
     @potato1 = File.expand_path('../models/potato1.xml', __FILE__)
@@ -13,7 +14,8 @@ class BivesTest < MiniTest::Unit::TestCase
   end
 
   def test_compare
-
+    #puts compare(@potato1, @potato2)
+    puts compare(@potato1,@potato2,["reportHtml"])
   end
 
 end
