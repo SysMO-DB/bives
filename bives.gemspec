@@ -1,24 +1,24 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'bevis/version'
+require 'bives/version'
 require "bundler/gem_tasks"
 
 require 'rake/testtask'
 
 Rake::TestTask.new do |t|
-  t.libs << 'lib/bevis'
+  t.libs << 'lib/bives'
   t.test_files = FileList['test/*_test.rb']
   t.verbose = true
 end
 
 Gem::Specification.new do |spec|
-  spec.name          = "bevis"
-  spec.version       = Bevis::VERSION
+  spec.name          = "bives"
+  spec.version       = Bives::VERSION
   spec.authors       = ["Stuart Owen"]
   spec.email         = ["stuart.owen@manchester.ac.uk"]
-  spec.description   = %q{Ruby wrapper for the BIVES model version comparison tool}
-  spec.summary       = %q{Ruby wrapper to interface with the BEVIS model version comparison tool - http://sems.uni-rostock.de/projects/bives/}
+  spec.description   = %q{Ruby wrapper for the BiVeS model version comparison tool}
+  spec.summary       = %q{Ruby wrapper to interface with the BiVeS model version comparison tool - http://sems.uni-rostock.de/projects/bives/}
   spec.homepage      = ""
   spec.license       = "MIT"
 

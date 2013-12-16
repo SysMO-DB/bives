@@ -1,7 +1,7 @@
 require 'minitest/unit'
 require "minitest/autorun"
 
-class BevisTest < MiniTest::Unit::TestCase
+class BivesTest < MiniTest::Unit::TestCase
   #include Bives
 
   def setup

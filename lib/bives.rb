@@ -1,6 +1,6 @@
 require "bevis/version"
 
-module Bevis
+module Bives
   def compare file1,file2
 
   end
