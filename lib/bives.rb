@@ -32,6 +32,7 @@ module Bives
     end
 
     if status.to_i != 0
+      #FIXME: create and use a dedicated Exception class
       raise err_message
     end
 
