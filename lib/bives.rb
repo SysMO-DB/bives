@@ -2,6 +2,10 @@ require_relative "bives/version"
 require 'open4'
 
 module Bives
+  class ConversionException < Exception
+
+  end
+
   JAR_FILENAME = "BiVeS-1.1.2-SNAPSHOT-fat.jar"
   JAR_FILEPATH = File.join File.dirname(__FILE__),"jars","#{JAR_FILENAME}"
 
@@ -31,11 +35,13 @@ module Bives
       stderr.close
     end
 
+    output=output.strip
+
     if status.to_i != 0
-      #FIXME: create and use a dedicated Exception class
-      raise err_message
+      err_message = output if err_message.empty?
+      raise ConversionException.new(err_message)
     end
 
-    output.strip
+    output
   end
 end

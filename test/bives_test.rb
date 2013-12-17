@@ -14,8 +14,15 @@ class BivesTest < MiniTest::Unit::TestCase
   end
 
   def test_compare
-    #puts compare(@potato1, @potato2)
-    puts compare(@potato1,@potato2,["reportHtml"])
+    result = compare(@potato1,@potato2)
+    refute_nil result
+    refute_empty result.strip
+  end
+
+  def test_exception_thrown
+    assert_raises Bives::ConversionException do
+      compare(@potato1,"",[])
+    end
   end
 
 end
