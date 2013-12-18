@@ -49,7 +49,6 @@ module Bives
     output=output.strip
 
     if status.to_i != 0
-      err_message = output if err_message.empty?
       raise ConversionException.new(err_message)
     end
 

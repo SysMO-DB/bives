@@ -20,9 +20,10 @@ class BivesTest < MiniTest::Unit::TestCase
   end
 
   def test_exception_thrown
-    assert_raises Bives::ConversionException do
+    exception = assert_raises Bives::ConversionException do
       compare(@potato1,"",[])
     end
+    assert_includes exception.message,"you need to provide 2 files!"
   end
 
 end
