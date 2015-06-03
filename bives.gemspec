@@ -3,6 +3,15 @@ $:.push File.expand_path("../lib", __FILE__)
 
 require 'bives/version'
 
+require 'rake/testtask'
+
+Rake::TestTask.new do |t|
+  t.libs << 'lib/bives'
+  t.test_files = FileList['test/*_test.rb']
+  t.verbose = true
+end
+
+
 Gem::Specification.new do |spec|
   spec.name          = "bives"
   spec.version       = Bives::VERSION
@@ -19,7 +28,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "rake"
-  spec.add_development_dependency "minitest"
+  spec.add_development_dependency "test-unit", "~> 3.0"
 
   spec.add_runtime_dependency "open4","~>1.3.0"
 
