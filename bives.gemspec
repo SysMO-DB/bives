@@ -11,6 +11,8 @@ Rake::TestTask.new do |t|
   t.verbose = true
 end
 
+task :default => :test
+
 
 Gem::Specification.new do |spec|
   spec.name          = "bives"
