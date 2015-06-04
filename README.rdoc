@@ -1,0 +1,41 @@
+= BiVeS Ruby Gem
+
+{<img src="https://codeclimate.com/github/SysMO-DB/bives.svg" />}[https://codeclimate.com/github/SysMO-DB/bives]
+{<img src="https://travis-ci.org/SysMO-DB/bives.svg?branch=update" alt="Build Status" />}[https://travis-ci.org/SysMO-DB/bives]
+
+Authors::     Stuart Owen, Martin Scharm
+Contact::     http://fair-dom.org/contact
+Homepage::    http://fair-dom.org
+Source code:: https://github.com/SysMO-DB/bives
+Licence::     BSD (See Licence file or http://www.opensource.org/licenses/bsd-license.php)
+Copyright::   (c) 2014, 2015 The University of Manchester, UK
+
+
+== Synopsis
+
+This is a Ruby Gem which wraps the BiVeS java tool.
+
+Its purpose is to produce and comparison of difference between two SBML models, based on the XyDiff algorithm.
+
+BiVeS is developed at SEMS, Rostock, Germany, and more information can be found at https://sems.uni-rostock.de/projects/bives/ .
+
+BiVeS is used as part of the {Seek4Science}[http://seek4science.org] project, but is a standalone library.
+
+
+== Usage
+
+include the gem in your Gemfile with:
+
+  gem 'bives'
+
+then to use in your code
+
+  include Bives
+  compare(file1,file2)
+
+where file1 and file2 are File objects.
+
+The result is a HTML report of the differences.
+
+You can see an example in our {Tests}[https://github.com/SysMO-DB/bives/blob/master/test/bives_test.rb]
+
