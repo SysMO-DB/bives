@@ -10,7 +10,7 @@ module Bives
 
   end
 
-  JAR_FILENAME = "BiVeS-1.1.3-SNAPSHOT-fat.jar"
+  JAR_FILENAME = "BiVeS-1.3.12-jar-with-dependencies.jar"
   JAR_FILEPATH = File.join File.dirname(__FILE__),"jars","#{JAR_FILENAME}"
 
   def self.included(mod)
