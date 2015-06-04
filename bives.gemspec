@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.description   = %q{Ruby wrapper for the BiVeS model version comparison tool}
   spec.summary       = %q{Ruby wrapper to interface with the BiVeS model version comparison tool - http://sems.uni-rostock.de/projects/bives/}
   spec.homepage      = ""
-  spec.license       = "MIT"
+  spec.license       = "Apache 2.0"
 
   spec.files         = `git ls-files`.split($/)
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }

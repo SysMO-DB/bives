@@ -7,7 +7,7 @@ Authors::     Stuart Owen, Martin Scharm
 Contact::     http://fair-dom.org/contact
 Homepage::    http://fair-dom.org
 Source code:: https://github.com/SysMO-DB/bives
-Licence::     BSD (See Licence file or http://www.opensource.org/licenses/bsd-license.php)
+Licence::     Apache 2.0 (See Licence file or http://opensource.org/licenses/Apache-2.0)
 Copyright::   (c) 2014, 2015 The University of Manchester, UK
 
 
