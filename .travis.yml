@@ -4,8 +4,8 @@ rvm:
   - 2.1.6
 
 env:
-   SUITE="rake test"
-   SUITE="rake build"
+   - SUITE="rake test"
+   - SUITE="rake build"
 
 script: bundle exec $SUITE
 
