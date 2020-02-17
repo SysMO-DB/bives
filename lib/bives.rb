@@ -1,5 +1,5 @@
 require_relative "bives/version"
-require 'open4'
+require 'terrapin'
 
 module Bives
   class ConversionException < Exception
@@ -29,29 +29,11 @@ module Bives
     check_jar
     cmd_opts = opts.collect{|o| "--#{o}"}.join(" ")
     command = "java -jar #{JAR_FILEPATH} #{cmd_opts} #{file1} #{file2}"
+    output = Terrapin::CommandLine.new(command).run
 
-    err_message = ""
-    output = ""
-    status = Open4::popen4(command) do |pid, stdin, stdout, stderr|
+    output.strip
+  rescue Terrapin::ExitStatusError => exception
+    raise ConversionException.new(exception.message)
 
-
-      while ((line = stdout.gets) != nil) do
-        output << line
-      end
-      stdout.close
-
-      while ((line=stderr.gets)!= nil) do
-        err_message << line
-      end
-      stderr.close
-    end
-
-    output=output.strip
-
-    if status.to_i != 0
-      raise ConversionException.new(err_message)
-    end
-
-    output
   end
 end

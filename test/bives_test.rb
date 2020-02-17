@@ -2,7 +2,7 @@ require 'minitest'
 require "minitest/autorun"
 require_relative '../lib/bives'
 
-class BivesTest < MiniTest::Unit::TestCase
+class BivesTest < MiniTest::Test
   include Bives
 
   def setup
