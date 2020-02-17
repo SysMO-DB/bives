@@ -1,4 +1,4 @@
-require 'minitest/unit'
+require 'minitest'
 require "minitest/autorun"
 require_relative '../lib/bives'
 

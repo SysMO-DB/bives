@@ -1,7 +1,7 @@
 language: ruby
 
-rvm:
-  - 2.1.6
+jdk:
+  - openjdk8
 
 env:
    - SUITE="rake test"
