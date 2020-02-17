@@ -2,6 +2,7 @@ language: ruby
 
 jdk:
   - openjdk8
+  - openjdk11
 
 env:
    - SUITE="rake test"

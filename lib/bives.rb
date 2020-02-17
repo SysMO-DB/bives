@@ -1,5 +1,5 @@
-require_relative "bives/version"
 require 'terrapin'
+require_relative "bives/version"
 
 module Bives
   class ConversionException < Exception
@@ -10,7 +10,7 @@ module Bives
 
   end
 
-  JAR_FILENAME = "BiVeS-1.3.12-jar-with-dependencies.jar"
+  JAR_FILENAME = "BiVeS-1.12.1-jar-with-dependencies.jar"
   JAR_FILEPATH = File.join File.dirname(__FILE__),"jars","#{JAR_FILENAME}"
 
   def self.included(mod)
@@ -29,6 +29,7 @@ module Bives
     check_jar
     cmd_opts = opts.collect{|o| "--#{o}"}.join(" ")
     command = "java -jar #{JAR_FILEPATH} #{cmd_opts} #{file1} #{file2}"
+
     output = Terrapin::CommandLine.new(command).run
 
     output.strip

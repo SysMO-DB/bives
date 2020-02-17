@@ -23,7 +23,7 @@ class BivesTest < MiniTest::Test
     exception = assert_raises Bives::ConversionException do
       compare("","",[])
     end
-    assert_includes exception.message,"no file provided"
+    assert_includes exception.message,"Parsing of command line options failed. need at least one file"
   end
 
 end
